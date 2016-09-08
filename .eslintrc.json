@@ -1,0 +1,7 @@
+{
+    "extends": "google",
+    "globals": {
+        "angular": true,
+        "document": true
+    }
+}

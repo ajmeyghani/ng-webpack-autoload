@@ -6,10 +6,13 @@ import requireAll from './requireall';
  * in the test folders.
 */
 const modules = [];
-const loadModules = require.context('./src/modules', true, /^((?![\\/]test[\\/]).)*\.js$/);
-loadModules.keys().forEach(function (key) {
+const loadModules = require
+  .context('./src/modules', true, /^((?![\\/]test[\\/]).)*\.js$/);
+
+loadModules.keys().forEach(function(key) {
   modules.push(loadModules(key));
 });
+
 const ngModule = angular.module('app', [].concat(modules));
 
 /*
@@ -20,9 +23,13 @@ const ngModule = angular.module('app', [].concat(modules));
  *   src/dependencies(pieces ....)
 */
 
-const dependencies = requireAll(require.context('./src/components', true, /^((?![\\/]test[\\/]).)*\.js$/));
-dependencies.forEach(dep => { dep(ngModule); });
+const dependencies = requireAll(
+  require.context('./src/components', true, /^((?![\\/]test[\\/]).)*\.js$/));
 
-angular.element(document).ready(function () {
+dependencies.forEach(dep => {
+  dep(ngModule);
+});
+
+angular.element(document).ready(function() {
   angular.bootstrap(document.getElementsByTagName('html')[0], [ngModule.name]);
 });
