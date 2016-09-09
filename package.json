@@ -8,7 +8,7 @@
   },
   "scripts": {
     "clean": "node_modules/.bin/rimraf dist",
-    "dev": "./node_modules/.bin/webpack -w --debug --devtool eval --output-pathinfo",
+    "dev": "./node_modules/.bin/webpack -w --debug --devtool source-map --output-pathinfo",
     "prestart": "npm run clean",
     "start": "npm run dev",
     "prebuild": "npm run clean",
