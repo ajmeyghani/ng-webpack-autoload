@@ -1,0 +1,24 @@
+{
+  "framework": "mocha",
+  "src_files": [
+    "src/**/*.test.js",
+    "dist/client.bundle.js"
+  ],
+  "serve_files": [
+    "node_modules/babel-polyfill/dist/polyfill.min.js",
+    "node_modules/angular/angular.js",
+    "node_modules/angular-mocks/angular-mocks.js",
+    "node_modules/sinon/pkg/sinon-1.17.5.js",
+    "node_modules/chai/chai.js",
+    "node_modules/bardjs/dist/bard.js",
+    "dist/tests.bundle.js",
+    "dist/client.bundle.js",
+    "src/**/*.test.js"
+  ],
+  "launch_in_dev": [
+    "Chrome"
+  ],
+  "launch_in_ci": [
+    "PhantomJS"
+  ]
+}

@@ -2,6 +2,20 @@
     "extends": "google",
     "globals": {
         "angular": true,
-        "document": true
+        "document": true,
+        "window": true,
+        "chai": true,
+        "expect": true,
+        "it": true,
+        "describe": true,
+        "bard": true,
+        "beforeEach": true,
+        "helper": true,
+        "sinon": true,
+        "afterEach": true,
+        "$controller": true,
+        "$rootScope": true,
+        "$q": true,
+        "$compile": true
     }
 }
