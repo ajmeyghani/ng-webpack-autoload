@@ -5,7 +5,7 @@
       "name": "Launch Chrome Debugger",
       "type": "chrome",
       "request": "launch",
-      "url": "http://localhost:8080/client/index.html",
+      "url": "http://localhost:8080/index.html",
       "sourceMaps": true,
       "webRoot": "${workspaceRoot}",
       "runtimeExecutable": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",

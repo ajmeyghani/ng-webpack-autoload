@@ -1,15 +1,15 @@
 /*
- * Webpack config for the client-side.
+*
 */
 var path = require('path');
 var webpack = require('webpack');
 var env = process.env.NODE_ENV;
 
 var plugins = [
-  new webpack.optimize.CommonsChunkPlugin(
-      'vendor',
-      env === 'prod' ? 'vendor.min.js' : 'vendor.js',
-      Infinity)
+  // new webpack.optimize.CommonsChunkPlugin(
+  //     'vendor',
+  //     env === 'prod' ? 'vendor.min.js' : 'vendor.js',
+  //     Infinity)
 ];
 
 if (env === 'prod') {
@@ -24,11 +24,12 @@ if (env === 'prod') {
 
 var config = {
   entry: {
-    app: path.resolve('./client/main.js'),
-    vendor: ['angular']
+    client: path.resolve('./main.js'),
+    tests: path.resolve('./tests.js')
+    // vendor: ['angular']
   },
   output: {
-    filename: env === 'prod' ? 'client.bundle.min.js' : 'client.bundle.js',
+    filename: env === 'prod' ? '[name].bundle.min.js' : '[name].bundle.js',
     path: path.resolve('./dist')
   },
   module: {
@@ -46,9 +47,17 @@ var config = {
   },
   resolve: {
     extensions: ['', '.webpack.js', 'web.js', '.js', '.jsx'],
-    modulesDirectories: ['node_modules', 'bower_components', path.resolve('client/src'), path.resolve('client')]
+    modulesDirectories: [
+      'node_modules',
+      'bower_components',
+      path.resolve('client/src'),
+      path.resolve('client')
+    ]
   },
-  plugins: plugins
+  plugins: plugins,
+  externals: {
+    angular: 'angular'
+  }
 };
 
 module.exports = config;

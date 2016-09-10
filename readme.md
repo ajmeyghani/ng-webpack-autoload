@@ -5,4 +5,4 @@
 - `nvm use 5`
 - `npm i`
 - `npm start`
-- `open http://localhost:8052/client/index.html`
+- `open http://localhost:8052/index.html`

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+    pre {
+      display: inline-block;
+    }
+  </style>
+  <title>Angular Autoload</title>
+</head>
+<body>
+  <p>Check if modules are loaded</p>
+  <div>
+    1: <ui></ui>
+  </div>
+  <div>
+    2: <external></external>
+  </div>
+  <div>
+    <p>Cart Component</p>
+    <cart></cart>
+  </div>
+  <div>
+    <p>Payment Component</p>
+    <payment></payment>
+  </div>
+  <script src="/node_modules/angular/angular.js"></script>
+  <script src="/dist/client.bundle.js"></script>
+</body>
+</html>
