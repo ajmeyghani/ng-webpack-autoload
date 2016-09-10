@@ -10,12 +10,13 @@ const ngModules = loader.keys()
   .map(m => loader(m) /* all the ngModule names are loaded in the array */);
 
 const bootModule = angular.module('boot', [...ngModules]);
+
 const appCmpnts = requireall(loader);
 appCmpnts.forEach(requireCmp => {
   if (/* hack to only load the exported functions but not other things
       the alternative is to create another context ...*/
   typeof requireCmp === 'function') {
-    requireCmp(bootModule);
+    requireCmp(bootModule /* defining each component on the boot module */);
   }
 });
 
