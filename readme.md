@@ -6,4 +6,5 @@
 - `npm i http-server -g`
 - `npm i`
 - `npm start`
-- `open http://localhost:8052/index.html`
+- Run `http-server .` in the root of the project.
+- `open http://localhost:8080`
