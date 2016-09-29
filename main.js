@@ -6,8 +6,8 @@ const loader = require.context('./src', true,
 /^((?![\\/]test[\\/]).)*\.js$/);
 
 const ngModules = loader.keys()
-  .filter(f => f.startsWith('./ng-modules'))
-  .map(m => loader(m) /* all the ngModule names are loaded in the array */);
+  .filter(f => f.startsWith('./ng-modules') && f.includes('.mod.js'))
+  .map(m => loader(m) /* For legacy cases if angular modules are used.*/);
 
 const bootModule = angular.module('boot', [...ngModules]);
 
