@@ -1,20 +1,16 @@
 import angular from 'angular';
 import requireall from './requireall';
 
-const loader = require.context('./src', true,
+const loader = require.context('./src/app', true,
 /* all .js files in ./src (and subdirs) except the files in the test folders */
 /^((?![\\/]test[\\/]).)*\.js$/);
 
-const ngModules = loader.keys()
-  .filter(f => f.startsWith('./ng-modules'))
-  .map(m => loader(m) /* all the ngModule names are loaded in the array */);
 
-const bootModule = angular.module('boot', [...ngModules]);
+const bootModule = angular.module('boot', []);
 
 const appCmpnts = requireall(loader);
 appCmpnts.forEach(requireCmp => {
-  if (/* hack to only load the exported functions but not other things
-      the alternative is to create another context ...*/
+  if (/* this check could be other things */
   typeof requireCmp === 'function') {
     requireCmp(bootModule /* defining each component on the boot module */);
   }
