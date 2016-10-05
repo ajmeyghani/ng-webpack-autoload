@@ -1,6 +1,3 @@
-/*
-*
-*/
 var path = require('path');
 var webpack = require('webpack');
 var env = process.env.NODE_ENV;
@@ -24,8 +21,7 @@ if (env === 'prod') {
 
 var config = {
   entry: {
-    client: path.resolve('./main.js'),
-    tests: path.resolve('./tests.js')
+    client: path.resolve('./main.js')
     // vendor: ['angular']
   },
   output: {

@@ -1,6 +1,7 @@
 {
   "framework": "mocha",
   "src_files": [
+    "globals.test.js",
     "src/**/*.test.js",
     "dist/client.bundle.js"
   ],
@@ -11,7 +12,7 @@
     "node_modules/sinon/pkg/sinon-1.17.5.js",
     "node_modules/chai/chai.js",
     "node_modules/bardjs/dist/bard.js",
-    "dist/tests.bundle.js",
+    "globals.test.js",
     "dist/client.bundle.js",
     "src/**/*.test.js"
   ],
