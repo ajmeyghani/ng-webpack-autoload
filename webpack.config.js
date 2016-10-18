@@ -32,15 +32,17 @@ var config = {
     loaders: [
       {
         test: /.js?$/,
-        loader: 'babel-loader',
+        loader: 'babel',
         exclude: /node_modules/,
         query: {
           presets: ['es2015'],
+          retainLines: 'true',
           plugins: ["add-module-exports"]
         }
       }
     ]
   },
+  devtool: env === 'prod' ? 'source-map' : 'eval',
   resolve: {
     extensions: ['', '.webpack.js', 'web.js', '.js', '.jsx'],
     modulesDirectories: [

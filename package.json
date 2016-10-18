@@ -8,11 +8,11 @@
   },
   "scripts": {
     "clean": "node_modules/.bin/rimraf dist",
-    "dev": "./node_modules/.bin/webpack -w --debug --devtool source-map --output-pathinfo",
-    "prestart": "npm run clean",
+    "dev": "./node_modules/.bin/webpack -w",
+    "predev": "npm run clean",
     "start": "npm run dev",
     "prebuild": "npm run clean",
-    "build": "NODE_ENV=prod ./node_modules/.bin/webpack --debug --devtool sourcemap",
+    "build": "NODE_ENV=prod ./node_modules/.bin/webpack",
     "tdd": "./node_modules/.bin/testem",
     "test": "./node_modules/.bin/testem ci -P 2"
   },
